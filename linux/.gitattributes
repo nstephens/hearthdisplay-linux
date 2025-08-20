@@ -1,0 +1,3 @@
+rootfs.ext2 filter=lfs diff=lfs merge=lfs -text
+disk.img filter=lfs diff=lfs merge=lfs -text
+efi-part.vfat filter=lfs diff=lfs merge=lfs -text

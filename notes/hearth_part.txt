@@ -1,0 +1,35 @@
+lrwxrwxrwx 1 root root 20 2011-01-01 11:25 backup -> /dev/block/mmcblk2p9
+lrwxrwxrwx 1 root root 21 2011-01-01 11:25 baseparameter -> /dev/block/mmcblk2p12
+lrwxrwxrwx 1 root root 20 2011-01-01 11:25 boot -> /dev/block/mmcblk2p7
+lrwxrwxrwx 1 root root 21 2011-01-01 11:25 cache -> /dev/block/mmcblk2p10
+lrwxrwxrwx 1 root root 20 2011-01-01 11:25 dtbo -> /dev/block/mmcblk2p5
+lrwxrwxrwx 1 root root 21 2011-01-01 11:25 metadata -> /dev/block/mmcblk2p11
+lrwxrwxrwx 1 root root 20 2011-01-01 11:25 misc -> /dev/block/mmcblk2p4
+lrwxrwxrwx 1 root root 18 2011-01-01 11:25 mmcblk2 -> /dev/block/mmcblk2
+lrwxrwxrwx 1 root root 23 2011-01-01 11:25 mmcblk2boot0 -> /dev/block/mmcblk2boot0
+lrwxrwxrwx 1 root root 23 2011-01-01 11:25 mmcblk2boot1 -> /dev/block/mmcblk2boot1
+lrwxrwxrwx 1 root root 20 2011-01-01 11:25 recovery -> /dev/block/mmcblk2p8
+lrwxrwxrwx 1 root root 20 2011-01-01 11:25 security -> /dev/block/mmcblk2p1
+lrwxrwxrwx 1 root root 21 2011-01-01 11:25 super -> /dev/block/mmcblk2p13
+lrwxrwxrwx 1 root root 20 2011-01-01 11:25 trust -> /dev/block/mmcblk2p3
+lrwxrwxrwx 1 root root 20 2011-01-01 11:25 uboot -> /dev/block/mmcblk2p2
+lrwxrwxrwx 1 root root 21 2011-01-01 11:25 userdata -> /dev/block/mmcblk2p14
+lrwxrwxrwx 1 root root 20 2011-01-01 11:25 vbmeta -> /dev/block/mmcblk2p6
+
+https://markuspetermann.net/Linux/Android/Using_dd_to_dump_Android_partionions_via_adb.md
+
+adb exec-out 'dd if=/dev/block/mmcblk2p7 2>/dev/null' > boot.bin
+
+https://drive.google.com/drive/folders/1gGaYN9J1xHcrnW-nuOXq-3PX8ufAaTHX
+==
+echo "Starting dtbo"
+adb exec-out 'dd if=/dev/block/mmcblk2p5 2>/dev/null' > dtbo.bin
+echo "Starting uboot"
+adb exec-out 'dd if=/dev/block/mmcblk2p2 2>/dev/null' > uboot.bin
+echo "Starting super"
+adb exec-out 'dd if=/dev/block/mmcblk2p13 2>/dev/null' > super.bin
+echo "Starting recovery"
+adb exec-out 'dd if=/dev/block/mmcblk2p8 2>/dev/null' > recovery.bin
+echo "Starting backup"
+adb exec-out 'dd if=/dev/block/mmcblk2p9 2>/dev/null' > backup.bin
+
